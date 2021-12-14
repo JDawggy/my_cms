@@ -13,33 +13,10 @@
 
             <?php
 
-            // echo INCLUDES_PATH;
 
+            $photo = Photo::find_by_id(4);
 
-            // $photos = Photos::find_all();
-
-            // foreach ($photos as $photo) {
-            //     echo $photo->title;
-            // }
-
-
-
-            // //$user->delete();
-            // $user->username = "WILLIAMSON";
-            // $user->password = "IS";
-            // $user->first_name = "THE DATABASE";
-            // $user->last_name = "GOAT";
-            // $user->update();
-
-
-
-            // $photo = new Photo;
-
-            // $photo->title = "test titleeee";
-            // $photo->size = 20;
-            // $photo->create();
-
-
+            echo $photo->filename;
 
 
 

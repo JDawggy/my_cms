@@ -11,21 +11,6 @@
 
 
 
-            <?php
-
-
-            $photo = Photo::find_by_id(4);
-
-            echo $photo->filename;
-
-
-
-
-
-            ?>
-
-
-
 
 
             <ol class="breadcrumb">

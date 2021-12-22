@@ -7,7 +7,12 @@ if (!$session->is_signed_in()) {
 }
 
 
-$comments = Comment::find_all();
+if (empty($_GET["id"])) {
+    redirect("photos.php");
+}
+
+
+$comments = Comment::find_the_comments($_GET["id"]);
 
 
 ?>
@@ -36,7 +41,7 @@ $comments = Comment::find_all();
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Comments
+                    Photo Comments
                 </h1>
 
                 <a href="add_user.php" class="btn btn-primary">Add Comment</a>
@@ -62,7 +67,7 @@ $comments = Comment::find_all();
                                     <td>
                                         <?php echo $comment->author; ?>
                                         <div class="action_links">
-                                            <a href="delete_comment.php?id=<?php echo $comment->id; ?>">Delete</a>
+                                            <a href="delete_comment_photo.php?id=<?php echo $comment->id; ?>">Delete</a>
                                         </div>
                                     </td>
 
